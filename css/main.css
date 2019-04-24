@@ -56,7 +56,9 @@ section {
 }
 
 #main-section {
-
+  width: 100%;
+  margin-top: 25vh;
+  height: 50vh;
 }
 #two-section {
   z-index: 50;
@@ -105,9 +107,9 @@ nav ul li a i {
 nav .logo-main {
   position: fixed;
   z-index: 1001;
-  font-size: 28px;
+  font-size: 20px;
   top: 1vh;
-  left: 100px;
+  left: 8.3333333333%;
 }
 nav ul li {
   width: 100%;
@@ -138,4 +140,12 @@ nav, .nav-wrapper {
 }
 .scrollspy-main ul li a.active {
   border-left: 2px solid #E29E21;
+}
+#blockchain-img {
+  width: 100%;
+  padding-top: 72%;
+  background-image: url('../img/innovation.png');
+  background-size: contain;
+}
+#blockchain-text h3 {
 }

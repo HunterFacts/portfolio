@@ -13,7 +13,6 @@
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;
   line-height: 1;
   letter-spacing: normal;
   text-transform: none;
@@ -24,6 +23,7 @@
   -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
+
 .solaris {
   font-family: Voyager;
   font-weight: normal;
@@ -39,7 +39,7 @@ main {
   background: -moz-linear-gradient(-45deg, rgba(62,69,88,1) 0%, rgba(31,42,54,1) 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(-45deg, rgba(62,69,88,1) 0%,rgba(31,42,54,1) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(135deg, rgba(62,69,88,1) 0%,rgba(31,42,54,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  margin: 0;
+  margin: 0 0 0 64px;
   padding: 0;
   min-height: 100vh;
   background-size: contain;
@@ -58,8 +58,9 @@ section {
 #main-section {
   width: 100%;
   margin-top: 25vh;
-  height: 50vh;
+  min-height: 75vh;
 }
+
 #two-section {
   z-index: 50;
 

@@ -8,7 +8,7 @@ $(document).ready(function(){
     constrainWidth: false,
     container: $('.yui')
   });
-  $('.scrollspy').scrollSpy({
-    throttle: 1000
-  });
 });
+window.onload = function (){
+  $('#loaders').hide();
+}

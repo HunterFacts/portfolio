@@ -105,12 +105,16 @@ nav ul li a i {
 .yui ul li:hover{
   background-color: #3E4558;
 }
-nav .logo-main {
-  position: fixed;
+.logo-main {
   z-index: 1001;
   font-size: 20px;
-  top: 1vh;
-  left: 8.3333333333%;
+
+}
+.logo-row {
+  margin: 3vh 0 0 64px;
+  position: absolute;
+  color: white;
+  width: 100%
 }
 nav ul li {
   width: 100%;
@@ -150,3 +154,149 @@ nav, .nav-wrapper {
 }
 #blockchain-text h3 {
 }
+
+.arc-rotate-double .loader {
+  width: 100px;
+  height: 100px; }
+  .arc-rotate-double .loader > div {
+    position: absolute;
+    border: 2px solid;
+    border-color: transparent #FFF;
+    border-radius: 50%;
+    animation: load 1s infinite ease-in-out; }
+  .arc-rotate-double .loader .arc-1 {
+    margin: 32% 0 0 32%;
+    width: 36%;
+    height: 36%; }
+  .arc-rotate-double .loader .arc-2 {
+    margin: 40% 0 0 40%;
+    width: 20%;
+    height: 20%;
+    animation-direction: reverse;
+    animation-delay: -0.5s; }
+
+@keyframes load {
+  0% {
+    transform: rotate(0) scale(1); }
+  50% {
+    transform: rotate(180deg) scale(0.6); }
+  100% {
+    transform: rotate(360deg) scale(1); } }
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg); } }
+
+
+.square-split .loader {
+  width: 100px;
+  height: 100px; }
+  .square-split .loader > div {
+    float: left;
+    width: 50%;
+    height: 50%; }
+    .square-split .loader > div::after {
+      content: '';
+      display: block;
+      margin: 50% 0 0 50%;
+      width: 50%;
+      height: 50%;
+      background: #FFF;
+      animation: squareSplit 2s infinite ease-in-out alternate; }
+  .square-split .loader .square-2 {
+    transform: rotate(90deg); }
+  .square-split .loader .square-3 {
+    transform: rotate(270deg);
+    animation-direction: reverse; }
+  .square-split .loader .square-4 {
+    transform: rotate(180deg);
+    animation-direction: reverse; }
+
+
+
+
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg); } }
+.arc-rotate2 .loader {
+  width: 100px;
+  height: 100px; }
+  .arc-rotate2 .loader .arc {
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+  .arc-rotate2 .loader .arc::before, .arc-rotate2 .loader .arc::after {
+    content: '';
+    position: absolute;
+    top: 32%;
+    left: 32%;
+    border: 2px solid;
+    border-radius: 50%;
+    width: 36%;
+    height: 36%; }
+  .arc-rotate2 .loader .arc::before {
+    border-color: #FFF;
+    opacity: .3; }
+  .arc-rotate2 .loader .arc::after {
+    border-color: transparent;
+    border-bottom-color: #FFF;
+    animation: rotate 1s infinite linear; }
+@keyframes open {
+	0% {
+		opacity: 1;
+		display: block;
+		 z-index: 5000;
+	}
+	90% {
+		opacity: 1;
+		 z-index: 5000;
+		display: block;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@media (max-width: 600px) {
+ nav {
+   display: none;
+ }
+ main {
+   margin: 0;
+ }
+ .logo-row {
+   margin: 2vh 0 0 0;
+ }
+ #icons-main {
+   margin-left: auto;
+   margin-right: auto;
+ }
+}
+
+#loaders .loader-container .loader {
+  margin: auto;
+  width: 150px;
+  height: 150px;}
+
+#loaders {
+	opacity: 0;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: -5000;
+  background: rgb(62,69,88); /* Old browsers */
+  background: -moz-linear-gradient(-45deg, rgba(62,69,88,1) 0%, rgba(31,42,54,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, rgba(62,69,88,1) 0%,rgba(31,42,54,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, rgba(62,69,88,1) 0%,rgba(31,42,54,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	animation: open 2s linear;
+}
+
+#loaders .loader-container {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left:50%;
+
+ }

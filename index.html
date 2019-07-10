@@ -20,9 +20,14 @@
 
     </head>
     <body>
-
+      <div class="row logo-row">
+        <div class="col s12 l11 offset-l1">
+          <div class="logo-main solaris">Portfolio Lukanin Mikhail</div>
+        </div>
+      </div>
       <nav>
-        <div class="logo-main solaris">Portfolio Lukanin Mikhail</div>
+
+
         <div class="nav-wrapper">
           <ul class="right hide-on-med-and-down">
             <li><a href="#" class="dropdown-trigger" data-target='dropdown-one'><i class="large material-icons">search</i></a></li>
@@ -46,6 +51,14 @@
         <li><a href="#!"><i class="material-icons">cloud</i>Оставить заявку</a></li>
       </ul>
       </div>
+      <div id="loaders">
+    		<div class="loader-container arc-rotate-double">
+    			<div class="loader">
+    				<div class="arc-1"></div>
+    				<div class="arc-2"></div>
+    			</div>
+    		</div>
+    	</div>
       <main>
           <div class="sky">
             <div class="stars"></div>
@@ -53,21 +66,16 @@
             <div class="stars2"></div>
             <div class="shooting-stars"></div>
           </div>
-          <div class="scrollspy-main">
-            <ul class="section table-of-contents">
-              <li><a href="#main-section">Main</a></li>
-              <li><a href="#two-section">Two</a></li>
-            </ul>
-          </div>
+
         <section id="main-section" class="big-section section scrollspy">
           <div class="row">
-            <div class="col s6  offset-s1">
+            <div class="col s12 l6 m8 offset-l1">
               <div id="blockchain-text">
                 <h3 class="white-text">Инновационное решение ваших задач</h3>
-                <p class="white-text">Для решения ваших задач использую современные фрейворки, cms и технологии</p>
+                <p class="white-text">Для решения ваших задач использую современные фрейворки, cms и технологии, если это потребуется</p>
               </div>
             </div>
-            <div class="col s5">
+            <div class="col s12 l5 m4">
               <div id="blockchain-img"></div>
             </div>
           </div>
@@ -76,39 +84,94 @@
 
        <section id="two-section" class="big-section section scrollspy">
          <div class="row">
-          <div class="col s12 m10 offset-m1">
-             <div class="row white-text">
-              <div class="col s12 m4">
-                <div class="icon-block">
-                  <h2 class="center white-text"><i class="material-icons">flash_on</i></h2>
-                  <h5 class="center">Делаю на совесть</h5>
+           <div class="col s12 m10 offset-m1">
+             <div class="row">
 
-                  <p class="light center"></p>
+                 <div class="row white-text" id="icons-main">
+                  <div class="col s12 m4">
+                    <div class="icon-block">
+                      <h2 class="center white-text"><i class="material-icons">flash_on</i></h2>
+                      <h5 class="center">Делаю на совесть</h5>
+
+                      <p class="light center">Отношусь к работе серьезно, выполняю качественно и по возможности в кратчайшие сроки</p>
+                    </div>
+                  </div>
+
+                  <div class="col s12 m4">
+                    <div class="icon-block">
+                      <h2 class="center white-text"><i class="material-icons">group</i></h2>
+                      <h5 class="center">Использую современные технологии</h5>
+
+                      <p class="light center">
+                        Использую современные технологии и инновационные решения ваших задач
+                        </p>
+                    </div>
+                  </div>
+
+                  <div class="col s12 m4">
+                    <div class="icon-block">
+                      <h2 class="center white-text"><i class="material-icons">settings</i></h2>
+                      <h5 class="center">Имею опыт в командной работе</h5>
+
+                      <p class="light center">Имея опыт в командной работе легко разбираюсь в чужом коде, умею тестировать на ошибки</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <div class="col s12 m4">
-                <div class="icon-block">
-                  <h2 class="center white-text"><i class="material-icons">group</i></h2>
-                  <h5 class="center">Использую современные технологии</h5>
-
-                  <p class="light center">
-                    Использую современные технологии для решения ваших задач
-                    .</p>
+              <div style="margin-top: 30vh;" class="row">
+                <h2 class="white-text">Что я умею?</h2>
+                <div class="col s12 m12 l4">
+                  <div class="card">
+                    <div class="card-image">
+                      <img style="height: 237px; object-fit: cover;object-position: center;" src="img/site2.png">
+                      <span style="background: white; color: black;" class="card-title">Адаптивный сайт</span>
+                    </div>
+                    <div class="card-content">
+                      <p>Могу сделать адаптивный сайт, который одинаково хорошо будет выглядеть и на компьютере, и на смартфоне, и на планшете.</p>
+                    </div>
+                    <div class="card-action">
+                      <a href="#">This is a link</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col s12 m6 l4">
+                  <div class="card">
+                    <div class="card-image">
+                      <img style="height: 237px; width: 100%;object-fit: cover;object-position: center;" src="img/parser.jpg">
+                      <span style="background: white; color: black;" class="card-title">Парсер</span>
+                    </div>
+                    <div class="card-content">
+                      <p>
+                        Умею парсить данные с других сайтов на ваш сайт, даже с таких популярных как instagramm, vk<br /><br />
+                      </p>
+                    </div>
+                    <div class="card-action">
+                      <a href="#">This is a link</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col s12 m6 l4">
+                  <div class="card">
+                    <div class="card-image">
+                      <img style="height: 237px; width: 100%;object-fit: cover;object-position: center;" src="img/VK-Coin.jpg">
+                      <span style="background: white; color: black;" class="card-title">Создание вк бота</span>
+                    </div>
+                    <div class="card-content">
+                      <p>Создам вк бота, который будет сообщать пользователям вашей группы вконтаке различные уведомления или же принимать заказы.</p>
+                    </div>
+                    <div class="card-action">
+                      <a href="#">This is a link</a>
+                    </div>
+                  </div>
                 </div>
               </div>
-
-              <div class="col s12 m4">
-                <div class="icon-block">
-                  <h2 class="center white-text"><i class="material-icons">settings</i></h2>
-                  <h5 class="center">Имею опыт в командной работе</h5>
-
-                  <p class="light center">Имея опыт в командной работе легко распознаю чужой, умею тестировать на ошибки.</p>
-                </div>
-              </div>
-            </div>
-          </div>
+           </div>
          </div>
+
+
+       </section>
+       <section id="three-section" class="big-section section scrollspy">
+
        </section>
       </main>
 

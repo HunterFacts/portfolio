@@ -9,6 +9,39 @@
     font-style: normal;
     src: url('../font/Voyager1.woff') format('woff');
    }
+
+@font-face {
+font-family: 'Gotham Pro Light';
+src: url('../font/GothamPro-Light.eot');
+src: url('../font/GothamPro-Light.eot?#iefix') format('embedded-opentype'),
+url('../font/GothamPro-Light.woff') format('woff'),
+url('../font/GothamPro-Light.ttf') format('truetype');
+font-weight: normal;
+font-style: normal;
+}
+html {
+	font-family: Gotham Pro Light;
+
+}
+.iwhite-text {
+	color:#f2f4f7 ;
+}
+.img-to-card {
+  height: 128px;
+  width: 128px;
+  padding-top:48px;
+  margin:0 auto;
+  padding-bottom: 256px;
+  background-size: 128px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.card, .card .card-action {
+  border-radius: 18px;
+}
+.iwhite {
+	background-color:#f2f4f7 ;
+}
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;
@@ -270,8 +303,21 @@ nav, .nav-wrapper {
    margin-left: auto;
    margin-right: auto;
  }
+ .card {
+  width: 100%;
+  margin: 0 0 10px 0;
+  border-radius: 0;
+ }
+ body .row .cards {
+   margin: 0;
+   padding: 0 0 0 0;
+ }
 }
-
+@media (max-width: 320px) {
+  h3 {
+    font-size: 2.30rem;
+  }
+}
 #loaders .loader-container .loader {
   margin: auto;
   width: 150px;

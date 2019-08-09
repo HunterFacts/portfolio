@@ -125,6 +125,7 @@
 	function openItem(item) {
 		if( isOpen ) return;
 		isOpen = true;
+    $('#two-section').hide();
 
 		// the element that will be transformed
 		var zoomer = item.querySelector('.zoomer');
@@ -206,6 +207,7 @@
 				classie.remove(zoomer, 'zoomer--active');
 				zoomer.style.WebkitTransform = 'translate3d(0,0,0) scale3d(1,1,1)';
 				zoomer.style.transform = 'translate3d(0,0,0) scale3d(1,1,1)';
+        $('body').removeAttr( 'style' );
 			}, 25);
 
 			if( bodyScale ) {
@@ -218,6 +220,8 @@
 
 			isOpen = false;
 		});
+    $('#two-section').show();
+    $('body').removeAttr( 'style' );
 	}
 
 	// applies the necessary transform value to scale the item up

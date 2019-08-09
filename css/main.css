@@ -185,6 +185,14 @@ nav, .nav-wrapper {
   background-image: url('../img/innovation.png');
   background-size: contain;
 }
+#blockchain-img-2 {
+  width: 100%;
+  padding-top: 72%;
+  background-image: url('../img/group_triangle.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 #blockchain-text h3 {
 }
 

@@ -196,10 +196,37 @@ nav, .nav-wrapper {
 #blockchain-text h3 {
 }
 
+.star {
+  height: 30px;
+  width: 32px;
+  float: left;
+  position: relative;
+  margin-left: 5px;
+}
+.star-gray {
+  background: url("../img/star-gray.svg");
+}
+.star-gold {
+  background: url("../img/star-gold.svg");
+}
+.stars-text {
+  text-align: right;
+  line-height: 30px;
+}
+
+.page-footer {
+      background: linear-gradient(135deg, rgba(62,69,88,1) 0%,rgba(31,42,54,1) 100%);
+}
+
 .card .card-content {
   height: 8rem;
 }
-
+.text-o-sebe{
+  position: absolute;
+  font-size: 18px;
+  left: 0;
+  top: 5rem;
+}
 .arc-rotate-double .loader {
   width: 100px;
   height: 100px; }
@@ -392,4 +419,3 @@ nav, .nav-wrapper {
   left:50%;
 
  }
- 

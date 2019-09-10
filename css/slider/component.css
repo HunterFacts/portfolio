@@ -9,6 +9,7 @@
 .slider {
 	height: 80vh;
 	position: relative;
+	overflow: visible !important;
 	z-index: 200;
 	width: 100%;
 	margin: 0 auto;
@@ -113,6 +114,7 @@
 .zoomer {
 	position: relative;
 	height: 360px; /* this is needed for IE10 so that vertical flexbox centering works */
+	overflow: visible;
 }
 
 .flex-center {

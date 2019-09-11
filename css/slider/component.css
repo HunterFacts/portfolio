@@ -182,7 +182,7 @@ section.slider {
 
 .preview {
 	overflow: hidden;
-	background: #18191b;
+	background: #222A35;
 }
 
 .preview img {
@@ -223,7 +223,7 @@ section.slider {
 	overflow-y: scroll;
 	width: 100%;
 	height: 100vh;
-	background: #18191b;
+	background: #222A35;
 	-webkit-overflow-scrolling: touch;
 }
 

@@ -76,8 +76,8 @@
                 <div class="row">
                   <div class="input-field col s12 l8 offset-l2">
                     <i class="material-icons prefix">account_circle</i>
-                    <input id="icon_prefix" type="text" class="validate">
-                    <label for="icon_prefix">Ваше имя</label>
+                    <input id="nameuser" type="text" class="validate">
+                    <label for="nameuser">Ваше имя</label>
                   </div>
                   <div class="input-field col s12 l8 offset-l2">
                     <i class="material-icons prefix">contact_mail</i>
@@ -86,11 +86,11 @@
                   </div>
                   <div class="input-field col s12 l8 offset-l2">
                     <i class="material-icons prefix">contact_phone</i>
-                    <input id="telephone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="validate">
+                    <input id="telephone" type="text" class="validate">
                     <label for="telephone">Телефон (необязательно)</label>
                   </div>
                   <div class="input-field col s12 l8 offset-l2">
-                    <select multiple class="icons">
+                    <select multiple id="selectModal" class="icons">
                       <option value="none" disabled>Не выбрано</option>
                       <option  id="verstk" data-icon="img/site.svg">Верстка сайта</option>
                       <option  id="wordpress" data-icon="img/site.svg">Сайт или лендинг на Wordpress</option>
@@ -108,7 +108,9 @@
                     <textarea id="textarea1" class="materialize-textarea" cols="4" data-length="120"></textarea>
                     <label for="textarea1">Дополнительная информация</label>
                   </div>
-                  <button class="btn indigo darken-2">Отправить данные</button>
+                  <div class="col s12 l8 offset-l2">
+                    <button id="sendInfo" class="btn indigo darken-2">Отправить данные</button>
+                  </div>
                 </div>
               </form>
             </div>
@@ -157,6 +159,7 @@
                           <div id="blockchain-text">
                             <h3 style="text-align: left;" class="iwhite-text">Минимальная нагрузка</h3>
                             <p style="text-align: left;" class="iwhite-text">Ваш сайт или бот будет минимально загруженным и максимально информативным</p>
+                            <button style="position: relative; float: left; margin-bottom: 2rem;" onclick="openModal(0);" class="btn btn-main btn-large indigo darken-2">Заказать услугу</button>
                           </div>
                         </div>
                         <div class="col s12 l5 m4">
@@ -223,19 +226,21 @@
           			<div class="content__item" id="content-1">
           				<img class="content__item-img rounded-right" src="images/iphone-content.png" alt="Apple Watch Content" />
           				<div class="content__item-inner">
-          					<h2>The iPhone 6</h2>
-          					<h3>Incredible performance for powerful apps</h3>
-          					<p>Built on 64-bit desktop-class architecture, the new A8 chip delivers more power, even while driving a larger display. The M8 motion coprocessor efficiently gathers data from advanced sensors and a new barometer. And with increased battery life, iPhone 6 lets you do more, for longer than ever.</p>
-          					<p><a href="https://www.apple.com/iphone-6/technology/">Learn more about this technology &xrarr;</a></p>
+          					<h2>Инновации</h2>
+          					<h3>Инновационное решение ваших задач</h3>
+          					<p>
+                      При решении ваших задач использую современные инструменты, фреймворки, cms, разумеется, если это уместно.
+                    </p>
+          					<p><a onclick="openModalOnPreview()" style="cursor: pointer;">Заказать услуги</a></p>
           				</div>
           			</div>
           			<div class="content__item" id="content-2">
-          				<img class="content__item-img rounded-right" src="images/ipad-content.jpg" alt="iPad Mini Content" />
+          				<img class="content__item-img rounded-right" src="images/ipad-content.png" alt="iPad Mini Content" />
           				<div class="content__item-inner">
-          					<h2>The iPad Mini</h2>
-          					<h3>Desktop-class architecture without a desktop</h3>
-          					<p>Don’t let its size fool you. iPad mini 3 is powered by an A7 chip with 64-bit desktop-class architecture. A7 delivers amazing processing power without sacriﬁcing battery life. So you get incredible performance in a device you can take with you wherever you go.</p>
-          					<p><a href="https://www.apple.com/ipad-mini-3/performance/">Learn more about Performance &xrarr;</a></p>
+          					<h2>Минимизация</h2>
+          					<h3>Минимальная нагрузка</h3>
+          					<p>Ваш продукт будет иметь только самые необходимые элементы, убирая при этом лишнюю нагрузку на систему, а также он будет максимально информативным</p>
+          					<p><a onclick="openModalOnPreview()" style="cursor: pointer;">Заказать услуги</a></p>
           				</div>
           			</div>
                 <!--
@@ -326,7 +331,7 @@
                       <p>Могу сделать адаптивный сайт, который одинаково хорошо будет выглядеть и на компьютере, и на смартфоне.</p>
                     </div>
                     <div class="card-action">
-                      <a href="#">Заказать</a>
+                      <a style="cursor: pointer;" onclick="openModal(1)">Заказать</a>
                     </div>
                   </div>
                 </div>
@@ -342,7 +347,7 @@
                       </p>
                     </div>
                     <div class="card-action">
-                      <a href="#">Заказать</a>
+                      <a style="cursor: pointer;" onclick="openModal(2)">Заказать</a>
                     </div>
                   </div>
                 </div>
@@ -356,7 +361,7 @@
                       <p>Создам вк бота, который будет сообщать пользователям вашей группы вконтаке различные уведомления или же принимать заказы от них.</p>
                     </div>
                     <div class="card-action">
-                      <a href="#">Заказать</a>
+                      <a style="cursor: pointer;" onclick="openModal(3)">Заказать</a>
                     </div>
                   </div>
                 </div>
@@ -370,7 +375,7 @@
                       <p>Осмотрю, проверю, оценю и поправлю ошибки на вашем сайте<br /><br /></p>
                     </div>
                     <div class="card-action">
-                      <a href="#">Заказать</a>
+                      <a style="cursor: pointer;" onclick="openModal(4)">Заказать</a>
                     </div>
                   </div>
                 </div>
@@ -384,7 +389,7 @@
                       <p>Установлю ваш сайт на хостинг на ваше доменное имя или же на любое другое.<br /><br /></p>
                     </div>
                     <div class="card-action">
-                      <a href="#">Заказать</a>
+                      <a style="cursor: pointer;" onclick="openModal(5)">Заказать</a>
                     </div>
                   </div>
                 </div>
@@ -398,7 +403,7 @@
                       <p>Возможно вам нужно сделать что-то нестандартное (к примеру онлайн меню в кафе) или что-то подобное. Я могу сделать и такое.</p>
                     </div>
                     <div class="card-action">
-                      <a href="#">Заказать</a>
+                      <a style="cursor: pointer;" onclick="openModal(6)">Заказать</a>
                     </div>
                   </div>
                 </div>
@@ -795,7 +800,7 @@
            <div class="row">
              <div class="col l6 s12">
                <h5 class="white-text">Услуги</h5>
-               <p class="grey-text text-lighten-4">Заказать услугу вы можете либо на секции услуг, либо <a href="#">кликнув сюда</a>.</p>
+               <p class="grey-text text-lighten-4">Заказать услугу вы можете либо на секции услуг, либо <a style="cursor: pointer;" onclick="openModal(0)">кликнув сюда</a>.</p>
                <p class="grey-text text-lighten-4">Если у вас есть какие-то вопросы, вы можете написать мне на почту - hunterfacts@mail.ru.</p>
              </div>
              <div class="col l4 offset-l2 s12">
@@ -819,6 +824,7 @@
       <script type="text/javascript" src="js/jquery.js"></script>
       <script type="text/javascript" src="js/materialize.js"></script>
       <script type="text/javascript" src="js/swiper.min.js"></script>
+      <script type="text/javascript" src="js/jquery.maskedinput.min.js"></script>
       <script type="text/javascript" src="js/main.js"></script>
 
       <script src="js/slider/classie.js"></script>

@@ -207,11 +207,15 @@ nav, .nav-wrapper {
   background: url("../img/star-gray.svg");
 }
 .star-gold {
-  background: url("../img/star-gold.svg");
+  background: url("../img/star-gold2.svg");
 }
 .stars-text {
   text-align: right;
   line-height: 30px;
+}
+
+.btn-main {
+  margin: 2rem;
 }
 
 .page-footer {
@@ -226,6 +230,61 @@ nav, .nav-wrapper {
   font-size: 18px;
   left: 0;
   top: 5rem;
+}
+.margin-adaptive {
+  margin-top: 30vh;
+}
+
+/* label color */
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #303f9f;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #303f9f;
+     box-shadow: 0 1px 0 0 #303f9f;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #303f9f;
+     box-shadow: 0 1px 0 0 #303f9f;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #303f9f;
+     box-shadow: 0 1px 0 0 #303f9f;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #303f9f;
+   }
+
+.modal-custom{
+
+}
+.arrow {
+  position: absolute;
+  top: 45%;
+  width: 36px;
+  height: 64px;
+  background-image: url("../img/arrow.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 3;
+  cursor: pointer;
+}
+.arrow:hover {
+  background-image: url("../img/arrow-hover.svg");
+  transition: 1s;
+}
+.arrow-right{
+  right: 2rem;
+  transform:  translate(0, -32px);
+}
+.arrow-left{
+  left: 2rem;
+  transform: rotate(180deg) translate(0, 32px);
 }
 .arc-rotate-double .loader {
   width: 100px;
@@ -357,25 +416,53 @@ nav, .nav-wrapper {
     position: relative;
     margin-left: 5px;
   }
+  .btn-main {
+    margin: 0 0 2rem 0;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .arrow {
+    display: none;
+  }
+  .margin-adaptive {
+    margin-top: 10vh;
+  }
+  nav {
+    display: none;
+  }
+  main {
+    margin: 0;
+  }
+  .logo-row {
+    margin: 2vh 0 0 0;
+  }
+  #icons-main {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 @media (max-width: 600px) {
- nav {
-   display: none;
- }
- main {
-   margin: 0;
- }
- .logo-row {
-   margin: 2vh 0 0 0;
- }
- #icons-main {
-   margin-left: auto;
-   margin-right: auto;
- }
+  hr {
+    display: none;
+  }
+  .select-wrapper + label {
+        top: -36px;
+  }
+  .modal-custom.open {
+    width: 100%;
+    min-height: 100vh !important;
+    top: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  [type="checkbox"] + span:not(.lever) {
+    font-size: 0.7rem;
+  }
+
  .card {
-  width: 100%;
-  margin: 0 0 10px 0;
-  border-radius: 0;
+  width: 96%;
+  margin: 0 2% 10px 2%;
+  border-radius: 4px;
  }
  body .row .cards {
    margin: 0;
@@ -400,6 +487,9 @@ nav, .nav-wrapper {
 }
 
 @media (max-width: 320px) {
+  .input-field > textarea + label {
+    font-size: 0.9rem;
+  }
   h3 {
     font-size: 2.30rem;
   }

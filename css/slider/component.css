@@ -6,8 +6,8 @@
 	overflow-y: hidden;
 }
 
-.slider {
-	height: 80vh;
+section.slider {
+	min-height: 80vh;
 	position: relative;
 	z-index: 200;
 	width: 100%;
@@ -21,7 +21,9 @@
 	-webkit-touch-callout: none;
 	-khtml-user-select: none;
 	margin-top: 20vh;
-	overflow: hidden;
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: auto;
 }
 
 .slide {
@@ -112,7 +114,7 @@
 /* Zoomer */
 .zoomer {
 	position: relative;
-	height: 360px; /* this is needed for IE10 so that vertical flexbox centering works */
+	min-height: 360px; /* this is needed for IE10 so that vertical flexbox centering works */
 }
 
 .flex-center {
@@ -412,4 +414,9 @@
 		font-size: 82%;
 		padding: 4em 3em 2em;
 	}
+}
+@media (max-width: 600px) {
+  .slider {
+    margin-top: 10vh;
+  }
 }

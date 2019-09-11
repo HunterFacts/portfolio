@@ -67,6 +67,56 @@
 
 
       <main>
+        <div id="modalMain" class="modal modal-fixed-footer modal-custom">
+          <div id="modalMainContent" class="modal-content">
+            <h4>Заказать услугу</h4>
+            <p>Заполните соотвествующие поля, чтобы я мог связаться с вами</p>
+            <div class="row">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col s12 l8 offset-l2">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="icon_prefix" type="text" class="validate">
+                    <label for="icon_prefix">Ваше имя</label>
+                  </div>
+                  <div class="input-field col s12 l8 offset-l2">
+                    <i class="material-icons prefix">contact_mail</i>
+                    <input id="email" type="email" class="validate">
+                    <label for="email">Почта</label>
+                  </div>
+                  <div class="input-field col s12 l8 offset-l2">
+                    <i class="material-icons prefix">contact_phone</i>
+                    <input id="telephone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" class="validate">
+                    <label for="telephone">Телефон (необязательно)</label>
+                  </div>
+                  <div class="input-field col s12 l8 offset-l2">
+                    <select multiple class="icons">
+                      <option value="none" disabled>Не выбрано</option>
+                      <option  id="verstk" data-icon="img/site.svg">Верстка сайта</option>
+                      <option  id="wordpress" data-icon="img/site.svg">Сайт или лендинг на Wordpress</option>
+                      <option  id="cms" data-icon="img/site.svg">Сайт или лендинг на другой CMS</option>
+                      <option  id="bot" data-icon="img/vk.svg">ВК бот</option>
+                      <option  id="parsing" data-icon="img/parser.svg">Парсинг</option>
+                      <option  id="pravka" data-icon="img/technical-support.svg">Правка ошибок на сайте</option>
+                      <option  id="ystanovka" data-icon="img/ux.svg">Установка сайта на хостинг</option>
+                      <option  id="drugoe" data-icon="img/light-bulb.svg">Другое</option>
+                    </select>
+                    <label>Выберите возможные услуги, которые вы бы хотели получить (необязательно)</label>
+                  </div>
+                  <div class="input-field col s12 l8 offset-l2">
+                    <i class="material-icons prefix">mode_edit</i>
+                    <textarea id="textarea1" class="materialize-textarea" cols="4" data-length="120"></textarea>
+                    <label for="textarea1">Дополнительная информация</label>
+                  </div>
+                  <button class="btn indigo darken-2">Отправить данные</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Закрыть</a>
+          </div>
+        </div>
           <div class="sky">
             <div class="stars"></div>
             <div class="stars1"></div>
@@ -80,11 +130,12 @@
           			<div class="slide slide--current" data-content="content-1">
           				<div class="slide__mover">
           					<div class="zoomer flex-center">
-                      <div class="row" style="width: 100%; margin-top: 25vh;">
+                      <div class="row" style="width: 100%;">
                         <div class="col s12 l6 m8 offset-l1">
                           <div id="blockchain-text">
                             <h3 style="text-align: left;" class="iwhite-text">Инновационное решение ваших задач</h3>
                             <p style="text-align: left;" class="iwhite-text">Для решения ваших задач использую современные фрейворки, cms и технологии, если это потребуется</p>
+                            <button style="position: relative; float: left; margin-bottom: 2rem;" onclick="openModal(0);" class="btn btn-main btn-large indigo darken-2">Заказать услугу</button>
                           </div>
                         </div>
                         <div class="col s12 l5 m4">
@@ -101,7 +152,7 @@
           			<div class="slide" data-content="content-2">
           				<div class="slide__mover">
           					<div class="zoomer flex-center">
-                      <div class="row" style="width: 100%; margin-top: 25vh;">
+                      <div class="row" style="width: 100%;">
                         <div class="col s12 l6 m8 offset-l1">
                           <div id="blockchain-text">
                             <h3 style="text-align: left;" class="iwhite-text">Минимальная нагрузка</h3>
@@ -229,7 +280,7 @@
        <section id="two-section" class="big-section section scrollspy">
          <div class="row">
            <div class="col s12 m10 offset-m1">
-             <div style="margin-top: 30vh;" class="row">
+             <div class="row margin-adaptive">
 
                  <div class="row iwhite-text" id="icons-main">
                   <div class="col s12 m4">
@@ -262,7 +313,7 @@
                   </div>
                 </div>
               </div>
-              <div style="margin-top: 30vh;" class="row">
+              <div class="row margin-adaptive">
                 <h3 class="iwhite-text">Что я умею?</h3>
                 <hr />
                 <div class="col s12 m12 l4 cards">
@@ -352,7 +403,7 @@
                   </div>
                 </div>
               </div>
-              <div style="margin-top: 30vh; position: relative;" class="row">
+              <div style="position: relative;" class="row margin-adaptive">
                 <h3 class="iwhite-text">О себе</h3>
                 <hr />
                 <div class="text-o-sebe col s12 m4">
@@ -403,15 +454,15 @@
                 <div class="col s12">
                   <div class="row">
                     <div class="col s6">
-                      <h6 class="iwhite-text"><b>Пермский государственный аграрно-технологический Университет</b></h6>
+                      <h6 class="iwhite-text"><b>Пермский государственный аграрно-технологический университет</b></h6>
                       <p class="iwhite-text">
                         текущая
                       </p>
                     </div>
                     <div class="col s6">
-                      <h6 class="iwhite-text"><b>Прикладная информатика в экономики</b></h6>
+                      <h6 class="iwhite-text"><b>Прикладная информатика в экономике</b></h6>
                       <p class="iwhite-text">
-                        Изучаем автоматизацию бизнес процессов, экономическое развитие бизнеса со стороны IT технологий.
+                        Изучаем автоматизацию бизнес процессов и экономическое развитие бизнеса со стороны IT технологий.
                       </p>
                     </div>
                   </div>
@@ -458,7 +509,40 @@
                   </div>
                 </div>
               </div>
-              <div style="margin-top: 30vh; position: relative;" class="row">
+              <div style="position: relative;" class="row margin-adaptive">
+                <h3 class="iwhite-text">Мои работы</h3>
+                <div class="slider">
+                  <ul class="slides">
+                    <li>
+                      <img src="img/zvukozapis.png">
+                      <div class="caption center-align">
+                        <h3>Тестовый сайт звукозаписи</h3>
+                        <h5 class="light grey-text text-lighten-3">Стенд сайта звукозаписи сделанный для форсайта.</h5>
+                        <a href="http://mihail.fors59.ru/" class="" target="_blank">Посмотреть</a>
+                      </div>
+                    </li>
+                    <li>
+                      <img src="img/travel.png">
+                      <div class="caption left-align">
+                        <h3 class="grey-text text-darken-4">Сайт туризма</h3>
+                        <h5 class="light grey-text text-darken-4">Стенд сайта туризма сделанный для форсайта.</h5>
+                        <a href="http://student2.fors59.ru/" target="_blank">Посмотреть</a>
+                      </div>
+                    </li>
+                    <li>
+                      <img src="img/coding3.png"> <!-- random image -->
+                      <div class="caption right-align">
+                        <h3 class="grey-text text-darken-4">Макет сайта преподавателя факультета экономики</h3>
+                        <h5 class="light grey-text text-darken-4">Сайт для преподавателя, где он может показывать свои работы.</h5>
+                        <a href="https://hunterfacts.github.io/proCodingSite/" target="_blank">Посмотреть</a>
+                      </div>
+                    </li>
+                  </ul>
+                  <div class="arrow arrow-right"></div>
+                  <div class="arrow arrow-left"></div>
+                </div>
+              </div>
+              <div style="position: relative;" class="row margin-adaptive">
                 <h3 class="iwhite-text">Способности</h3>
 
                 <hr / style="margin-bottom: 25px;">
@@ -710,16 +794,16 @@
          <div class="container">
            <div class="row">
              <div class="col l6 s12">
-               <h5 class="white-text">Контакты</h5>
-               <p class="grey-text text-lighten-4">Заказать услугу вы можете либо на секции услуг, либо тыкнув сюда <a href="#">click</a>.</p>
+               <h5 class="white-text">Услуги</h5>
+               <p class="grey-text text-lighten-4">Заказать услугу вы можете либо на секции услуг, либо <a href="#">кликнув сюда</a>.</p>
+               <p class="grey-text text-lighten-4">Если у вас есть какие-то вопросы, вы можете написать мне на почту - hunterfacts@mail.ru.</p>
              </div>
              <div class="col l4 offset-l2 s12">
-               <h5 class="white-text">Links</h5>
+               <h5 class="white-text">Контакты</h5>
                <ul>
-                 <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                 <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                 <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                 <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                 <li><span class="grey-text text-lighten-3">Почта -</span> <a class="grey-text text-lighten-3" href="mailto:hunterfacts@mail.ru">hunterfacts@mail.ru</a></li>
+                 <li><span class="grey-text text-lighten-3">Вк -</span> <a class="grey-text text-lighten-3" target="_blank" href="https://vk.com/misha_lukanin">vk.com/misha_lukanin</a></li>
+                 <li><span class="grey-text text-lighten-3">Телеграм -</span> <a class="grey-text text-lighten-3" target="_blank" href="http://t-do.ru/thehypeprogrammer">t-do.ru/thehypeprogrammer</a></li>
                </ul>
              </div>
            </div>
@@ -727,7 +811,7 @@
          <div class="footer-copyright">
            <div class="container">
            © 2019 Луканин Михаил
-           <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+           <!--<a class="grey-text text-lighten-4 right" href="#!">More Links</a>-->
            </div>
          </div>
        </footer>

@@ -17,6 +17,12 @@ $(document).ready(function(){
   $('.arrow-left').click(function(){
     $('div.slider').slider('prev');
   });
+  $("#dropdown-one, #dropdown-two").on("click","a", function (event) {
+       event.preventDefault();
+       var id  = $(this).attr('href'),
+           top = $(id).offset().top;
+       $('body,html').animate({scrollTop: top}, 1500);
+   });
 });
 window.onload = function (){
   $('#loaders').hide();
@@ -43,7 +49,7 @@ $('#sendInfo').click(function(){
       formData.append('textarea', textarea);
     }
     $.ajax({
-        url: "http://f0308175.xsph.ru/newbot.php",
+        url: "backend/newbot.php",
         type: "POST",
         data: formData,
         processData: false,
@@ -73,6 +79,20 @@ function openModalOnPreview(){
   $('.button--close').click();
   openModal(0);
 }
+
+function switchParticles(){
+  if ($('#switch-particles').data('particle-state') == "on"){
+    $('.stars1, .stars2, stars3, .shooting-stars').hide();
+    $('#switch-particles').data('particle-state', 'off');
+    $('#switch-particles').html('<i class="material-icons">cloud</i>Включить космические частицы</a>');
+  }
+  else {
+    $('#switch-particles').data('particle-state', 'on');
+    $('.stars1, .stars2, stars3, .shooting-stars').show();
+    $('#switch-particles').html('<i class="material-icons">cloud</i>Отключить космические частицы</a>');
+  }
+}
+
 function openModal(trigger = 0){
   $('#selectModal option').prop('selected', false);
   switch(trigger) {

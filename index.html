@@ -35,25 +35,35 @@
         <div class="nav-wrapper">
           <ul class="right hide-on-med-and-down">
             <li><a href="#" class="dropdown-trigger" data-target='dropdown-one'><i class="large material-icons">search</i></a></li>
-            <li><a href="#" class="dropdown-trigger" data-target='dropdown-two'><i class="large material-icons">view_module</i></a></li>
-            <li><a href="#" class="dropdown-trigger" data-target='dropdown-three'><i class="large material-icons">refresh</i></a></li>
-            <li><a href="#" class="dropdown-trigger" data-target='dropdown-four'><i class="large material-icons">more_vert</i></a></li>
+            <li><a href="#" class="dropdown-trigger" data-target='dropdown-two'><i class="large material-icons">more_vert</i></a></li>
+            <li><a href="#" class="dropdown-trigger" data-target='dropdown-three'><i class="large material-icons">view_module</i></a></li>
+            <!--<li><a href="#" class="dropdown-trigger" data-target='dropdown-four'><i class="large material-icons">more_vert</i></a></li>-->
           </ul>
         </div>
       </nav>
       <div class="yui">
       <ul id='dropdown-one' class='dropdown-content'>
-        <li><a href="#!"><i class="material-icons">cloud</i>Текст 1</a></li>
+        <li><a href="#bodyMain"><i class="material-icons">cloud</i>Главная</a></li>
+        <li><a href="#services"><i class="material-icons">cloud</i>Услуги</a></li>
+        <li><a href="#thisI"><i class="material-icons">cloud</i>О себе</a></li>
+        <li><a href="#education"><i class="material-icons">cloud</i>Образование</a></li>
+        <li><a href="#work"><i class="material-icons">cloud</i>Работа</a></li>
+        <li><a href="#myProject"><i class="material-icons">cloud</i>Мои работы</a></li>
+        <li><a href="#skills"><i class="material-icons">cloud</i>Способности</a></li>
       </ul>
       <ul id='dropdown-two' class='dropdown-content'>
-        <li><a href="#!"><i class="material-icons">cloud</i>Текст 2</a></li>
+        <li><a onclick="openModal(0);" href="#!"><i class="material-icons">cloud</i>Заказать услугу</a></li>
+        <li><a href="#footer"><i class="material-icons">cloud</i>Контакты</a></li>
       </ul>
       <ul id='dropdown-three' class='dropdown-content'>
+        <li><a id="switch-particles" data-particle-state="on" onclick="switchParticles()" href="#!"><i class="material-icons">cloud</i>Отключить космические частицы</a></li>
+      </ul>
+      <!--<ul id='dropdown-three' class='dropdown-content'>
         <li><a href="#!"><i class="material-icons">cloud</i>Описание</a></li>
       </ul>
       <ul id='dropdown-four' class='dropdown-content'>
         <li><a href="#!"><i class="material-icons">cloud</i>Оставить заявку</a></li>
-      </ul>
+      </ul>-->
       </div>
       <div id="loaders">
     		<div class="loader-container arc-rotate-double">
@@ -319,7 +329,7 @@
                 </div>
               </div>
               <div class="row margin-adaptive">
-                <h3 class="iwhite-text">Что я умею?</h3>
+                <h3 id="services" class="iwhite-text">Что я умею?</h3>
                 <hr />
                 <div class="col s12 m12 l4 cards">
                   <div class="card iwhite">
@@ -409,7 +419,7 @@
                 </div>
               </div>
               <div style="position: relative;" class="row margin-adaptive">
-                <h3 class="iwhite-text">О себе</h3>
+                <h3 id="thisI" class="iwhite-text">О себе</h3>
                 <hr />
                 <div class="text-o-sebe col s12 m4">
                   <p class="white-text">
@@ -438,7 +448,7 @@
               <div style="margin-top: 30vh; position: relative;" class="row">
                 <!--<h6 class="iwhite-text">Что может быть мучительнее, чем учиться на собственном опыте? Только одно: не учиться на собственном опыте.
 <b>Лоренс Питер</b></h6>-->
-                <h3 class="iwhite-text">Образование</h3>
+                <h3 id="education" class="iwhite-text">Образование</h3>
                 <hr />
                 <div class="col s12">
                   <div class="row">
@@ -473,7 +483,7 @@
                   </div>
                 </div>
 
-                <h3 class="iwhite-text">Работа</h3>
+                <h3 id="work" class="iwhite-text">Работа</h3>
                 <hr />
                 <div class="col s12">
                   <div class="row">
@@ -515,7 +525,7 @@
                 </div>
               </div>
               <div style="position: relative;" class="row margin-adaptive">
-                <h3 class="iwhite-text">Мои работы</h3>
+                <h3 id="myProject" class="iwhite-text">Мои работы</h3>
                 <div class="slider">
                   <ul class="slides">
                     <li>
@@ -548,7 +558,7 @@
                 </div>
               </div>
               <div style="position: relative;" class="row margin-adaptive">
-                <h3 class="iwhite-text">Способности</h3>
+                <h3 id="skills" class="iwhite-text">Способности</h3>
 
                 <hr / style="margin-bottom: 25px;">
                 <div class="row" style="margin-right: 0;">
@@ -795,7 +805,7 @@
 
        </section>
       </main>
-      <footer class="page-footer">
+      <footer id="footer" class="page-footer">
          <div class="container">
            <div class="row">
              <div class="col l6 s12">

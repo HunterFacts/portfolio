@@ -84,12 +84,12 @@ function switchParticles(){
   if ($('#switch-particles').data('particle-state') == "on"){
     $('.stars1, .stars2, stars3, .shooting-stars').hide();
     $('#switch-particles').data('particle-state', 'off');
-    $('#switch-particles').html('<i class="material-icons">cloud</i>Включить космические частицы</a>');
+    $('#switch-particles').html('<i style="font-size: 2.25rem;" class="material-icons">sync</i>Включить космические частицы</a>');
   }
   else {
     $('#switch-particles').data('particle-state', 'on');
     $('.stars1, .stars2, stars3, .shooting-stars').show();
-    $('#switch-particles').html('<i class="material-icons">cloud</i>Отключить космические частицы</a>');
+    $('#switch-particles').html('<i style="font-size: 2.25rem;" class="material-icons">sync</i>Отключить космические частицы</a>');
   }
 }
 

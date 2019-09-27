@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta property="og:image" content="./img/parser.jpg" />
+
+    <style>
+        body{
+            background: url('snow_blood.png') center center no-repeat;
+            height: 100vh;
+            max-height: 100vh;
+            min-height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            background-size: cover;
+        }
+        * { margin:0; padding:0; } /* to remove the top and left whitespace */
+
+		html, body { width:100%; height:100%; } /* just to be sure these are full screen*/
+
+		canvas { display:block; } /* To remove the scrollbars */
+			
+		@keyframes pulsate{
+		1% {opacity: 0.1;}
+		2% {opacity: 1;}
+		3% {opacity: 0.1;}
+		4% {opacity: 1;}
+		5% {opacity: 0.1;}
+		12% {opacity: 0.01;}
+		13% {opacity: 1;}
+		15% {opacity: 1;}
+		16% {opacity: 0.01;}
+		24% {opacity: 0.01;}
+		25% {opacity: 1;}
+		26% {opacity: 0.3;}
+		66% {opacity: 0.3;}
+		67% {opacity: 1;}
+		68% {opacity: 0.01;}
+		}
+		#black {
+			background-color: black;
+			z-index: 100;
+			width: 100%;
+			height: 100vh;
+			position: fixed;
+			opacity: 0.01;
+			-webkit-animation: pulsate 10s linear infinite;
+			animation: pulsate 10s linear infinite;
+		}
+    </style>
+
+    <title>Snow</title>
+    </head>
+<body>
+<div id="black"></div>
+<canvas id="canvas"></canvas>
+<script>
+    (function() {
+    var canvas = document.getElementById('canvas'),
+            context = canvas.getContext('2d');
+
+    // resize the canvas to fill browser window dynamically
+    window.addEventListener('resize', resizeCanvas, false);
+
+    function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            /**
+             * Your drawings need to be inside this function otherwise they will be reset when 
+             * you resize the browser window and the canvas goes will be cleared.
+             */
+            drawStuff(); 
+    }
+    resizeCanvas();
+
+    function drawStuff() {
+            // do your drawing stuff here
+    }
+})();
+'use strict';
+    var canvas = document.getElementById('canvas')
+    ,interv = 10
+    ,Snowflake = function(h){
+        this.width = canvas.width;
+        this.height = canvas.height;
+        this.vxCommon = .404;
+        this.vyCommon = .0626;
+        this.r = h.r;
+        this.parallax = h.parallax;
+        this.x = h.x;
+        this.y = h.y;
+        this.vx = h.vx;
+        this.vy = h.vy;
+        this.vMelt = .993;
+    };
+    Snowflake.prototype = {
+        rMin: 1.8
+        ,rMax: 5
+        ,plain: .88 * canvas.height //level of plain when flakes are stops
+    };
+    var rand = function(n, shift){return (shift!=null ? shift : -n/2) + n * Math.random();}
+    ,randRad
+    ,snowflakes = Array.apply(0, Array(320)).map(function(){return new Snowflake({
+        r: randRad = rand(Snowflake.prototype.rMax, Snowflake.prototype.rMin)
+        ,parallax: randRad *.005
+        ,x: rand(canvas.width - 2* randRad, randRad)
+        ,y: rand(canvas.height  - 2* randRad, randRad - (canvas.height - Snowflake.prototype.plain))
+        ,vx: rand(.02)
+        ,vy: rand(.02)
+    });})
+    ,cont = canvas.getContext('2d'), noStopMotion =1, count=0;
+
+    cont.fillStyle = 'rgba(255, 255, 255, 0.29)';
+    cont.fillRect(0, 0, canvas.width, canvas.height);
+    cont.fillStyle = 'rgba(255, 255, 255, 0.78)';
+
+    var startMotion = function(dt2, base_image){ //render all
+        var now = +new Date();
+        cont.clearRect(0, 0, canvas.width, canvas.height);
+
+        snowflakes.forEach(function(S, i, arr){ //render flake
+            S.date = S.date || now;
+            var dt = dt2 || now - S.date;
+            if(!(S.y > S.plain - 2 * S.r -2 + (S.r - S.rMin) * (S.height - S.plain) / (S.rMax - S.rMin) )){
+                S.x += dt * (S.vx + S.vxCommon + S.parallax);
+                S.x -= S.width * (S.x / S.width | 0);
+                S.y += dt * (S.vy + S.vyCommon + S.parallax);
+                S.y -= S.height * (S.y / S.height | 0);
+                S.vx = (S.vx + rand(.002)) * .999;
+                S.vy = (S.vy + rand(.002)) * .999;
+                S.r -= .003
+            }else{
+                S.r = S.r * S.vMelt - .003;
+            }
+            if(S.r >0){
+                cont.beginPath();
+                cont.arc(S.x, S.y, S.r, 0, 2 * Math.PI, !1);
+                cont.fill();
+            }else{
+                S.r = rand(S.rMax, S.rMin);
+                S.y =0;
+            }
+            //console.log(S.vx)
+            S.date = now;
+            count++;
+        });
+        noStopMotion && setTimeout(startMotion, interv);
+    };
+    setTimeout(function(){console.log('count', count /10);}, 10000);
+    startMotion(null);
+</script>
+</body>
+</html>

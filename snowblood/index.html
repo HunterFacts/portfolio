@@ -34,8 +34,8 @@
 		16% {opacity: 0.01;}
 		24% {opacity: 0.01;}
 		25% {opacity: 1;}
-		26% {opacity: 0.3;}
-		66% {opacity: 0.3;}
+		26% {opacity: 0.1;}
+		66% {opacity: 0.1;}
 		67% {opacity: 1;}
 		68% {opacity: 0.01;}
 		}
@@ -113,9 +113,9 @@
     });})
     ,cont = canvas.getContext('2d'), noStopMotion =1, count=0;
 
-    cont.fillStyle = 'rgba(255, 255, 255, 0.29)';
+    cont.fillStyle = 'rgba(183, 28, 28, 0.29)';
     cont.fillRect(0, 0, canvas.width, canvas.height);
-    cont.fillStyle = 'rgba(255, 255, 255, 0.78)';
+    cont.fillStyle = 'rgba(183, 28, 28, 0.78)';
 
     var startMotion = function(dt2, base_image){ //render all
         var now = +new Date();
